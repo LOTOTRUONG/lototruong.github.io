@@ -1,0 +1,52 @@
+/*pc*/
+@media (min-width: 1024px) {
+/*header*/
+#main__header .mobile-menu-btn{
+    display: none;
+}
+
+}
+
+
+
+/*mobile and tablet*/
+@media (max-width: 1023px){
+
+} 
+/*mobile*/
+@media (max-width: 740px){
+html {
+        line-height: 1.4;
+        font-size: 0.75rem;
+}
+
+/*header*/
+#main__header{
+    overflow: hidden;
+}
+#main__header .mobile-menu-btn{
+    display: flex;
+}
+#main__header .header__list-link{
+    display: none;
+}
+#header__nav{
+    display: block;
+  }
+#header__nav li{
+    display: block;
+    padding: 16px 0;
+
+}
+
+#header__nav li a{
+    padding: 1px 24px;
+  }
+#header__nav > li:first-child{
+    display: inline-block;
+}
+
+.container{
+    max-width: 540px;
+}
+}

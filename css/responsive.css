@@ -22,7 +22,9 @@
 #main__header .mobile-menu-btn{
     display: none;
 }
-
+.t-padding{
+    padding: 1rem 0;
+}
 /*about*/
 .section__header{
     padding: 0 0 !important;
@@ -31,7 +33,9 @@
 } 
 /*mobile*/
 @media (max-width: 740px){
-
+.t-padding{
+    padding: 0 0;
+}
 .mo-full{
     max-width: 100% !important;
 }

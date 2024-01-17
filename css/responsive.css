@@ -1,5 +1,5 @@
 /*pc*/
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
 /*header*/
 #main__header .mobile-menu-btn{
     display: none;
@@ -10,22 +10,59 @@
 
 
 /*mobile and tablet*/
-@media (max-width: 1023px){
+@media (max-width: 1024px){
+.container{
+        max-width: 940px;
+}
+
+/*header*/
+#main__header .header__list-link{
+    display: none;
+}
+#main__header .mobile-menu-btn{
+    display: none;
+}
+
+/*about*/
+.section__header{
+    padding: 0 0 !important;
+}
 
 } 
 /*mobile*/
 @media (max-width: 740px){
-html {
-        line-height: 1.4;
-        font-size: 0.75rem;
+
+.mo-full{
+    max-width: 100% !important;
+}
+html{
+    font-size: 0.95rem;
+}
+h2{
+    font-size: 1.25rem;
+}
+h3{
+    font-size: 1rem;
+}
+.container{
+    max-width: 540px;
 }
 
+.section__title{
+    font-size: 2rem;
+}
+.grid__item{
+    padding: 0.5rem;
+}
 /*header*/
 #main__header{
     overflow: hidden;
 }
 #main__header .mobile-menu-btn{
     display: flex;
+}
+.menu-icon{
+    font-size: 1.5rem;
 }
 #main__header .header__list-link{
     display: none;
@@ -36,7 +73,6 @@ html {
 #header__nav li{
     display: block;
     padding: 16px 0;
-
 }
 
 #header__nav li a{
@@ -45,8 +81,35 @@ html {
 #header__nav > li:first-child{
     display: inline-block;
 }
+/*introduction*/
+#main__introduction .introduction__item{
+    flex: 1 0 100%;  
+}
 
-.container{
-    max-width: 540px;
+#main__introduction .left{
+    align-items: center;
+  }
+
+/*about*/
+.mo_about_information{
+    display: none;
+}
+
+/*service*/
+
+#main__service .service__icon{
+    width: 45px;
+    height: 45px;
+  }
+#main__service .service__icon__style{
+    font-size: 1rem;
+  }
+
+  /*portfolio*/
+#main__portfolio .portfolio__check{
+    display: none;
+}
+#main__portfolio .card__image {
+    width: 50%;
 }
 }

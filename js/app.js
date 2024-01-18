@@ -117,12 +117,3 @@ for (const modalContainer of document.querySelectorAll('.js-modal-container')) {
 }
 
 
-/*send message*/ 
-var submitButton = document.getElementById("js-submitBtn");
-var form = document.getElementById("email_form");
-form.addEventListener("submit", function(e){
-    setTimeout(function(){
-        submitButton.value = "Sending...."
-        submitButton.disabled = true;
-    },1);
-})

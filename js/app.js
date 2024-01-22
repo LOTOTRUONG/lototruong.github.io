@@ -26,51 +26,69 @@ var menuItems = document.querySelectorAll('#header__nav li a[href*="#"]');
     }
  }
 
+ /*Skill*/
+ //skillbar
+
+ document.querySelectorAll('.skillbar').forEach(function(skillbar) {
+    var dataWidth  = skillbar.getAttribute('data-width');
+    var skillbarTitle = skillbar.querySelector('.skillbar__title');
+    var skillbarPercent = skillbar.querySelector('.skill-bar-percent');
+
+    skillbar.style.width = '0%';
+    skillbar.style.transition = 'width  2s ease-in-out';
+     setTimeout(function() {
+        skillbar.style.width = dataWidth;
+        skillbarPercent.innerHTML = dataWidth;
+        skillbarTitle.style.opacity = '1';
+    }, 20); 
+});
+
+
 
 /*Portfolio*/
 /*Classification the project*/
 
 function tabsFilters() {
     const tabs = document.querySelectorAll('.js-portfolio-tabs');
-    const projets = document.querySelectorAll('.js-portfolio-card');
+    const projects = document.querySelectorAll('.js-portfolio-card');
   
     const resetActiveLinks = () => {
-      tabs.forEach(element => {
-        element.classList.remove('portfolio_all');
+      tabs.forEach(tab => {
+        tab.classList.remove('portfolio_all');
       });
-    }
+    };
   
-    const showProjets = (element) => {
-      console.log(element);
-      projets.forEach(projet => {
+    const showProjects = (category) => {
+      console.log(category);
+      projects.forEach(project => {
+        let filter = project.getAttribute('project-category');
   
-        let filter = projet.getAttribute('project-category');
-  
-        if (element === 'all') {
-          projet.parentNode.classList.remove('hide');
-          return
+        if (category === 'all') {
+          project.parentNode.classList.remove('hide');
+          return;
         }
-        if(filter !== element){
-            projet.parentNode.classList.add('hide');
+  
+        if (filter !== category) {
+          project.parentNode.classList.add('hide');
         } else {
-            projet.parentNode.classList.remove('hide');
+          project.parentNode.classList.remove('hide');
         }
-  
       });
-    }
+    };
   
-    tabs.forEach(element => {
-        element.addEventListener('click', (event) => {
+    tabs.forEach(tab => {
+      tab.addEventListener('click', (event) => {
         event.preventDefault();
-        let filter = element.getAttribute('project-filter');
-        showProjets(filter)
+        let filter = tab.getAttribute('project-filter');
+        showProjects(filter);
         resetActiveLinks();
-        element.classList.add('portfolio_alL');
+        tab.classList.add('portfolio_all');
       });
     });
   }
   
-tabsFilters()
+  tabsFilters();
+  
 
 
 
@@ -115,5 +133,4 @@ for (const modalContainer of document.querySelectorAll('.js-modal-container')) {
         event.stopPropagation();
     });
 }
-
 

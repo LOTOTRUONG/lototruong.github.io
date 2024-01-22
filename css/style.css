@@ -216,6 +216,12 @@ p{
   text-align: left;
 }
 
+#main__introduction .img__swing{
+  animation: swing ease-in-out 1s infinite alternate;
+  transform-origin: center -20px;
+  float: none;
+}
+
 #main__introduction .left{
   align-items: flex-start;
   animation-duration: 1s;
@@ -301,7 +307,23 @@ p{
 .skillbar{
   background-color: rgb(119, 78, 24);
   padding: 1rem;
+  position: relative;
+  border-radius: 4px;
+  
 }
+.skillbar__title{
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+.skill-bar-percent {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  line-height: 35px;
+  color: #ffffff;
+}
+
 
 /*portfolio*/
 #main__portfolio{
@@ -349,10 +371,15 @@ p{
   background: whitesmoke;
   text-transform: uppercase;
   position: relative;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(119, 78, 24, 0.4);
   overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1), 
+  0 2px 2px rgba(0,0,0,0.1), 
+  0 4px 4px rgba(0,0,0,0.1), 
+  0 8px 8px rgba(0,0,0,0.1),
+  0 16px 16px rgba(0,0,0,0.1);
+  border: 1px solid rgba(119, 78, 24, 0.4);
 }
+
 
 #main__portfolio .card__image{
   width: 90%;
@@ -528,10 +555,10 @@ p{
 
 @keyframes slideInLeft{
   0% {
-    transform: translateX(-110%);
+    transform: translateY(110%);
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 @keyframes slideInRight{
@@ -540,5 +567,14 @@ p{
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
   }
 }
